@@ -7,7 +7,7 @@ A command-line tool for inspecting and comparing ZIP/JAR archives.
 ## Installation
 ```bash
 # Clone this repository
-git clone 
+git clone https://github.com/Aleksander-Wieczorek/Simple-zip-parser.git
 cd simple-zip-parser
 
 # Run installation script
