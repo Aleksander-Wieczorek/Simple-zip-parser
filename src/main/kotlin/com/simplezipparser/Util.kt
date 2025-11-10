@@ -30,10 +30,10 @@ fun compareJsons(file1:String, file2: String)
     }
     else{
         if(added.isNotEmpty()){
-            println("Added:\n ${added.joinToString("\n")}\n")
+            println("Added:\n ${added.joinToString("\n ")}\n")
         }
         if(removed.isNotEmpty()){
-            println("Removed:\n ${removed.joinToString("\n")}\n")
+            println("Removed:\n ${removed.joinToString("\n ")}\n")
         }
     }
 }
