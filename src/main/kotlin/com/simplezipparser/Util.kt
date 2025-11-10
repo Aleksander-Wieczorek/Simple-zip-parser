@@ -1,4 +1,4 @@
-package com.`simple-zip-parser`
+package com.simplezipparser
 
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -9,11 +9,15 @@ private val json = Json { prettyPrint = true; ignoreUnknownKeys = true }
 fun saveAsJson(entries: List<ZipEntryInfo>, output: File){
     output.writeText(json.encodeToString(entries))
 }
-
-fun compareJsonFiles(file1:File, file2: File)
+fun zipToJson(file: File) : String
 {
-    val entries1 = json.decodeFromString<List<ZipEntryInfo>>(file1.readText())
-    val entries2 = json.decodeFromString<List<ZipEntryInfo>>(file2.readText())
+    val entries= parseZipStructure(file)
+    return json.encodeToString(entries)
+}
+fun compareJsons(file1:String, file2: String)
+{
+    val entries1 = json.decodeFromString<List<ZipEntryInfo>>(file1)
+    val entries2 = json.decodeFromString<List<ZipEntryInfo>>(file2)
 
     val names1 = entries1.map { it.name }.toSet()
     val names2 = entries2.map { it.name }.toSet()

@@ -1,4 +1,4 @@
-package com.`simple-zip-parser`
+package com.simplezipparser
 
 import model.ZipEntryInfo
 import java.io.File

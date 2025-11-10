@@ -16,15 +16,17 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0")
 
+    testImplementation(kotlin("test"))
 }
 
 application {
-    mainClass.set("com.example.plugininspector.MainKt")
+    mainClass.set("com.simplezipparser.MainKt")
+    applicationName = "zipparser"
 }
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "com.example.plugininspector.MainKt"
+        attributes["Main-Class"] = "com.simplezipparser.MainKt"
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
